@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="610" viewBox="0 0 1000 610" role="img" aria-labelledby="title desc">
+<title id="title">TCS publishing architecture</title><desc id="desc">Cron launches the importer, which reads private settings and Facebook posts, merges the source cache, and runs the page builder. The generated site is deployed to static hosting for readers.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#64748b"/></marker></defs>
+<rect width="1000" height="610" rx="16" fill="#f8fafc"/>
+<text x="35" y="35" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#0f172a">TCS Media Network publishing workflow</text>
+<path d="M205 97H255" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M365 130V230" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M545 97H510V250H475" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M205 267H255" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M475 267H545" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M545 290H510V350H365V405" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M475 442H545" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M745 442H800" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M882 480V535" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="35" y="65" width="170" height="65" rx="9" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="120.0" y="93" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#0f172a">Cron schedule</text>
+<text x="120.0" y="114" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#475569">Every 15 minutes</text>
+<rect x="255" y="65" width="220" height="65" rx="9" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="365.0" y="93" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#0f172a">run_sync.sh</text>
+<text x="365.0" y="114" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#475569">Launch Python importer</text>
+<rect x="545" y="65" width="200" height="65" rx="9" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="645.0" y="93" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#0f172a">Private .env</text>
+<text x="645.0" y="114" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#475569">Token and settings</text>
+<rect x="35" y="230" width="170" height="75" rx="9" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="120.0" y="258" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#0f172a">Facebook Page</text>
+<text x="120.0" y="279" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#475569">Graph API</text>
+<rect x="255" y="230" width="220" height="75" rx="9" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="365.0" y="258" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#0f172a">sync_facebook.py</text>
+<text x="365.0" y="279" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#475569">Fetch and merge posts</text>
+<rect x="545" y="230" width="200" height="75" rx="9" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="645.0" y="258" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#0f172a">cache/posts.json</text>
+<text x="645.0" y="279" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#475569">Retained source records</text>
+<rect x="255" y="405" width="220" height="75" rx="9" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="365.0" y="433" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#0f172a">site_builder.py</text>
+<text x="365.0" y="454" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#475569">Render HTML and JSON</text>
+<rect x="545" y="405" width="200" height="75" rx="9" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="645.0" y="433" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#0f172a">site/</text>
+<text x="645.0" y="454" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#475569">Pages and cached assets</text>
+<rect x="800" y="405" width="165" height="75" rx="9" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="882.5" y="433" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#0f172a">Static hosting</text>
+<text x="882.5" y="454" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#475569">Public website</text>
+<text x="875" y="565" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#0f172a">Readers and sharing</text>
+<text x="35" y="555" font-family="Arial,sans-serif" font-size="13" fill="#475569">Sync machine retains credentials and source cache.</text>
+<text x="35" y="578" font-family="Arial,sans-serif" font-size="13" fill="#475569">Deploy the generated site/ directory to public hosting.</text>
+</svg>

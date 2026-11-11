@@ -1,0 +1,7 @@
+[
+  {"id":"demo_1001","created_time":"2026-11-10T09:00:00+0000","message":"Sample breaking-news headline for the website prototype\n\nThis is placeholder text only. When you run the real Facebook importer, this article will be replaced with an actual Page post.\n\n#BreakingNews #Trending #Politics"},
+  {"id":"demo_1002","created_time":"2026-11-10T08:00:00+0000","message":"Sample community story for TCS\n\nThis sample demonstrates how a complete caption becomes an individual article page.\n\n#Community #Featured"},
+  {"id":"demo_1003","created_time":"2026-11-09T06:00:00+0000","message":"Sample sports headline\n\nA placeholder sports story to demonstrate automatic topic filtering.\n\n#Sports #Trending"},
+  {"id":"demo_1004","created_time":"2026-11-08T13:00:00+0000","message":"Sample entertainment story\n\nAn example of an entertainment category entry.\n\n#Entertainment"},
+  {"id":"demo_1005","created_time":"2026-11-08T09:00:00+0000","message":"Sample technology story\n\nAn example of a technology article, powered by JSON files and static HTML.\n\n#Technology"}
+]
