@@ -285,6 +285,9 @@ def article_page(post, more_posts, categories, mode):
 
 def build_site(posts, page_name, mode, site_dir=None):
     posts = [post for post in posts if post.get("title", "").strip().casefold() != "photo or video update from tcs"]
+    posts = [post for post in posts if not re.search(
+        r"loud\s*fest", " ".join(str(post.get(field, "")) for field in ("title", "message", "hashtags", "categories")), re.IGNORECASE
+    )]
     site = Path(site_dir) if site_dir else (ROOT / "site")
     article_dir = site / "articles"
     cat_dir = site / "category"

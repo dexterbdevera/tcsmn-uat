@@ -44,6 +44,24 @@ class TCSBuilderTests(unittest.TestCase):
             self.assertEqual(data["posts"][0]["id"], "caption")
             self.assertNotIn("Photo or video update from TCS", (path / "latest.html").read_text())
 
+    def test_loudfest_posts_are_removed_on_rebuild(self):
+        posts = [self.sample("festival", "Catch THROW at LOUD Fest Manila! #Throw"),
+                 self.sample("tickets", "Early bird tickets\nhttps://www.ticketmelon.com/s32productions/loudfest"),
+                 self.sample("news", "A real headline #Politics")]
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp)
+            (path / "articles").mkdir()
+            (path / "articles/festival.html").write_text("Old festival article")
+            (path / "category").mkdir()
+            (path / "category/throw.html").write_text("Old festival category")
+            build_site(posts, "TCS", "live", path)
+            self.assertFalse((path / "articles/festival.html").exists())
+            self.assertFalse((path / "articles/tickets.html").exists())
+            self.assertFalse((path / "category/throw.html").exists())
+            data = json.loads((path / "data/posts.json").read_text())
+            self.assertEqual([post["id"] for post in data["posts"]], ["news"])
+            self.assertNotIn("LOUD Fest", (path / "latest.html").read_text())
+
     def test_article_body_omits_headline_and_preserves_story(self):
         for headline in ("Example headline", "A long headline with complete details " * 5):
             post = self.sample("story", headline + " #Politics\nStory continues on the next line.\n\nAnother paragraph.")

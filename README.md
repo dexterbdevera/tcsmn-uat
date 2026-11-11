@@ -31,7 +31,7 @@ The diagram shows the sync machine and the public website as separate stages. Th
 1. An editor publishes a Facebook Page post with a headline on the first content line, story text below it, and optional hashtags.
 2. Cron runs `run_sync.sh`. The importer loads `.env`, with exported environment variables taking precedence.
 3. The importer connects to the configured Page and requests published posts through Meta’s Graph API, including publication timestamps, captions, original links, and available images.
-4. Imported posts are normalized and merged by Facebook post ID with the existing cache. Posts classified as “Photo or video update from TCS” are excluded from publication.
+4. Imported posts are normalized and merged by Facebook post ID with the existing cache. Posts classified as “Photo or video update from TCS” and Loudfest articles are excluded from publication.
 5. Supported Facebook images are cached under `site/assets/fb/`. The source cache is saved outside the public website directory.
 6. The builder generates an article per post, topic pages from hashtags, and the homepage, Latest News, and Trending listings. It removes stale generated article and category pages that are absent from the current build input.
 7. The web server serves the refreshed `site/` directory, or a separate deployment step uploads it to the hosting provider.
