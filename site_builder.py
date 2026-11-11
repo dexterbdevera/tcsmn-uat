@@ -284,6 +284,13 @@ def article_page(post, more_posts, categories, mode):
 
 
 def build_site(posts, page_name, mode, site_dir=None):
+    # Related event promotions whose captions do not mention Loudfest.
+    excluded_ids = {
+        "1338734489326583_122116518867500397",
+        "1338734489326583_122113734705500397",
+        "1338734489326583_122113682997500397",
+    }
+    posts = [post for post in posts if post.get("id") not in excluded_ids]
     posts = [post for post in posts if post.get("title", "").strip().casefold() != "photo or video update from tcs"]
     posts = [post for post in posts if not re.search(
         r"loud\s*fest", " ".join(str(post.get(field, "")) for field in ("title", "message", "hashtags", "categories")), re.IGNORECASE
